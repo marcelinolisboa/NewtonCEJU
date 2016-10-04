@@ -1,12 +1,12 @@
 ﻿@model Newton.CJU.Models.Solicitacao
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_MasterPage.cshtml";
 }
 
-<h2>Delete</h2>
+<h2>Details</h2>
 
-<h3>Are you sure you want to delete this?</h3>
 <div>
     <h4>Solicitacao</h4>
     <hr />
@@ -52,6 +52,22 @@
         </dd>
 
         <dt>
+            @Html.DisplayNameFor(model => model.FatoJuridico)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FatoJuridico)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IdentificacaoPartes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdentificacaoPartes)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.Duvida)
         </dt>
 
@@ -68,11 +84,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.FatoJuridico)
+            @Html.DisplayNameFor(model => model.Descricao)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.FatoJuridico)
+            @Html.DisplayFor(model => model.Descricao)
         </dd>
 
         <dt>
@@ -84,22 +100,6 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.IdentificacaoPartes)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.IdentificacaoPartes)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Descricao)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Descricao)
-        </dd>
-
-        <dt>
             @Html.DisplayNameFor(model => model.Correcao)
         </dt>
 
@@ -108,13 +108,8 @@
         </dd>
 
     </dl>
-
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
-        </div>
-    }
 </div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

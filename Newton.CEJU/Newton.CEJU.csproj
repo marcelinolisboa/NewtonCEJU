@@ -152,7 +152,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\SolicitacaosController.cs" />
+    <Compile Include="Controllers\SolicitacaoController.cs" />
     <Compile Include="Models\AreaConhecimento.cs" />
     <Compile Include="Models\AtividadeSemestral.cs" />
     <Compile Include="Models\AutenticacaoViewModels.cs" />
@@ -255,11 +255,11 @@
     <Content Include="Scripts\maps\us-unemployment.json" />
     <Content Include="Views\Autenticacao\Login.cshtml" />
     <Content Include="Views\Autenticacao\Register.cshtml" />
-    <Content Include="Views\Solicitacaos\Create.cshtml" />
-    <Content Include="Views\Solicitacaos\Delete.cshtml" />
-    <Content Include="Views\Solicitacaos\Details.cshtml" />
-    <Content Include="Views\Solicitacaos\Edit.cshtml" />
-    <Content Include="Views\Solicitacaos\Index.cshtml" />
+    <Content Include="Views\Solicitacao\Create.cshtml" />
+    <Content Include="Views\Solicitacao\Delete.cshtml" />
+    <Content Include="Views\Solicitacao\Details.cshtml" />
+    <Content Include="Views\Solicitacao\Edit.cshtml" />
+    <Content Include="Views\Solicitacao\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

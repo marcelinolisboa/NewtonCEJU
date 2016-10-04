@@ -11,18 +11,18 @@ using Newton.CJU.Models;
 
 namespace Newton.CJU.Controllers
 {
-    public class SolicitacaosController : Controller
+    public class SolicitacaoController : Controller
     {
         private CJUContext db = new CJUContext();
 
-        // GET: Solicitacaos
+        // GET: Solicitacao
         public ActionResult Index()
         {
             var solicitacaos = db.Solicitacaos.Include(s => s.AtividadeSemestral).Include(s => s.Historico).Include(s => s.Situacao);
             return View(solicitacaos.ToList());
         }
 
-        // GET: Solicitacaos/Details/5
+        // GET: Solicitacao/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -37,7 +37,7 @@ namespace Newton.CJU.Controllers
             return View(solicitacao);
         }
 
-        // GET: Solicitacaos/Create
+        // GET: Solicitacao/Create
         public ActionResult Create()
         {
             ViewBag.AtividadeSemestralId = new SelectList(db.AtividadesSemestrais, "Id", "Id");
@@ -46,12 +46,12 @@ namespace Newton.CJU.Controllers
             return View();
         }
 
-        // POST: Solicitacaos/Create
+        // POST: Solicitacao/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,SituacaoId,HistoricoId,UsuarioId,AtividadeSemestralId,DataCadastro,Duvida,Parecer,FatoJuridico,Fundamentacao,IdentificacaoPartes,Descricao,Correcao")] Solicitacao solicitacao)
+        public ActionResult Create([Bind(Include = "Id,SituacaoId,HistoricoId,UsuarioId,AtividadeSemestralId,DataCadastro,FatoJuridico,IdentificacaoPartes,Duvida,Parecer,Descricao,Fundamentacao,Correcao")] Solicitacao solicitacao)
         {
             if (ModelState.IsValid)
             {
@@ -66,7 +66,7 @@ namespace Newton.CJU.Controllers
             return View(solicitacao);
         }
 
-        // GET: Solicitacaos/Edit/5
+        // GET: Solicitacao/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -84,12 +84,12 @@ namespace Newton.CJU.Controllers
             return View(solicitacao);
         }
 
-        // POST: Solicitacaos/Edit/5
+        // POST: Solicitacao/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,SituacaoId,HistoricoId,UsuarioId,AtividadeSemestralId,DataCadastro,Duvida,Parecer,FatoJuridico,Fundamentacao,IdentificacaoPartes,Descricao,Correcao")] Solicitacao solicitacao)
+        public ActionResult Edit([Bind(Include = "Id,SituacaoId,HistoricoId,UsuarioId,AtividadeSemestralId,DataCadastro,FatoJuridico,IdentificacaoPartes,Duvida,Parecer,Descricao,Fundamentacao,Correcao")] Solicitacao solicitacao)
         {
             if (ModelState.IsValid)
             {
@@ -103,7 +103,7 @@ namespace Newton.CJU.Controllers
             return View(solicitacao);
         }
 
-        // GET: Solicitacaos/Delete/5
+        // GET: Solicitacao/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -118,7 +118,7 @@ namespace Newton.CJU.Controllers
             return View(solicitacao);
         }
 
-        // POST: Solicitacaos/Delete/5
+        // POST: Solicitacao/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

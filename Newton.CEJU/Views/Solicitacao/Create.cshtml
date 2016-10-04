@@ -1,13 +1,14 @@
 ﻿@model Newton.CJU.Models.Solicitacao
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Novo formulário de solicitação";
+    Layout = "~/Views/Shared/_MasterPage.cshtml";
 }
 
-<h2>Edit</h2>
+<h2>Create</h2>
 
 
-@using (Html.BeginForm())
+@using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
     
@@ -15,8 +16,9 @@
         <h4>Solicitacao</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.Id)
-
+        
+        <!--
+            
         <div class="form-group">
             @Html.LabelFor(model => model.SituacaoId, "SituacaoId", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -55,37 +57,13 @@
                 @Html.EditorFor(model => model.DataCadastro, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.DataCadastro, "", new { @class = "text-danger" })
             </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Duvida, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Duvida, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Duvida, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Parecer, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Parecer, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Parecer, "", new { @class = "text-danger" })
-            </div>
-        </div>
+        </div> -->
 
         <div class="form-group">
             @Html.LabelFor(model => model.FatoJuridico, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.FatoJuridico, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.FatoJuridico, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Fundamentacao, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Fundamentacao, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Fundamentacao, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -98,12 +76,38 @@
         </div>
 
         <div class="form-group">
+            @Html.LabelFor(model => model.Duvida, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Duvida, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Duvida, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <!--
+        <div class="form-group">
+            @Html.LabelFor(model => model.Parecer, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Parecer, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Parecer, "", new { @class = "text-danger" })
+            </div>
+        </div> -->
+
+        <div class="form-group">
             @Html.LabelFor(model => model.Descricao, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Descricao, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.TextAreaFor(model => model.Descricao, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Descricao, "", new { @class = "text-danger" })
             </div>
         </div>
+
+        <!--
+        <div class="form-group">
+            @Html.LabelFor(model => model.Fundamentacao, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Fundamentacao, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Fundamentacao, "", new { @class = "text-danger" })
+            </div>
+        </div> 
 
         <div class="form-group">
             @Html.LabelFor(model => model.Correcao, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -111,18 +115,18 @@
                 @Html.EditorFor(model => model.Correcao, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Correcao, "", new { @class = "text-danger" })
             </div>
-        </div>
+        </div> -->
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Salvar" class="btn btn-default" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Voltar", "Index")
 </div>
 
 <script src="~/Scripts/jquery-1.10.2.min.js"></script>

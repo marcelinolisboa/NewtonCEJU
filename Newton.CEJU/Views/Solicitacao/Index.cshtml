@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MasterPage.cshtml";
 }
 
 <h2>Index</h2>
@@ -27,22 +28,22 @@
             @Html.DisplayNameFor(model => model.DataCadastro)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.FatoJuridico)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdentificacaoPartes)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Duvida)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Parecer)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.FatoJuridico)
+            @Html.DisplayNameFor(model => model.Descricao)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Fundamentacao)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IdentificacaoPartes)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Descricao)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Correcao)
@@ -68,22 +69,22 @@
             @Html.DisplayFor(modelItem => item.DataCadastro)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.FatoJuridico)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdentificacaoPartes)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.Duvida)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Parecer)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.FatoJuridico)
+            @Html.DisplayFor(modelItem => item.Descricao)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Fundamentacao)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IdentificacaoPartes)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Descricao)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Correcao)
