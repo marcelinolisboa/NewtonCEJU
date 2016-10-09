@@ -16,12 +16,14 @@ namespace Newton.CJU.Controllers
         private CJUContext db = new CJUContext();
 
         // GET: AreasConhecimento
+        [Authorize(Roles = "Professor")]
         public ActionResult Index()
         {
             return View(db.AreasConhecimento.ToList());
         }
 
         // GET: AreasConhecimento/Details/5
+        [Authorize(Roles = "Professor")]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -37,6 +39,7 @@ namespace Newton.CJU.Controllers
         }
 
         // GET: AreasConhecimento/Create
+        [Authorize(Roles = "Professor")]
         public ActionResult Create()
         {
             return View();
@@ -45,6 +48,7 @@ namespace Newton.CJU.Controllers
         // POST: AreasConhecimento/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize(Roles = "Professor")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,Nome,Ativo")] AreaConhecimento areaConhecimento)
@@ -60,6 +64,7 @@ namespace Newton.CJU.Controllers
         }
 
         // GET: AreasConhecimento/Edit/5
+        [Authorize(Roles = "Professor")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -77,6 +82,7 @@ namespace Newton.CJU.Controllers
         // POST: AreasConhecimento/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize(Roles = "Professor")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,Nome,Ativo")] AreaConhecimento areaConhecimento)
@@ -91,6 +97,7 @@ namespace Newton.CJU.Controllers
         }
 
         // GET: AreasConhecimento/Delete/5
+        [Authorize(Roles = "Professor")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -106,6 +113,7 @@ namespace Newton.CJU.Controllers
         }
 
         // POST: AreasConhecimento/Delete/5
+        [Authorize(Roles = "Professor")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
